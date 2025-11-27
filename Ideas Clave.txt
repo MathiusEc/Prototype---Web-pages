@@ -1,0 +1,26 @@
+- Hosting
+
+     *	Compartido (Idóneo para páginas simples)
+	El mantenimiento es por parte del proveedor
+	Más económico, suceptible a errores
+
+	Compartido en computadoras externas, no existe mucha administración por detras	
+
+     *  Cloude Hosting
+	En la nube, con varios servidores
+	Se divide en dos, particón disco duro, o por hardrive
+
+     *  Ejemplos de Servicios de Hosting
+	
+	Hostinger
+	GitHub Pages
+	Netlify
+
+
+
+- Dominio
+  
+  Permite obtener correo administrativo
+  Name Server, conectado al hosting
+
+  .com (genérico) .edu (educacion) .ec (country) .org(organizaciones)
