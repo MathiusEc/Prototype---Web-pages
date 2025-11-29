@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype - 1</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>  
+<body>
+    <header> 
+        <!-- El header es la sección superior de la página, 
+            donde generalmente se coloca el logo, el menú de navegación y otros elementos importantes 
+                
+            En general es estática-->
+
+        <nav> <!-- La etiqueta <nav> define un bloque de navegacion de la página 
+               que permite agregar el menu de navegación, mejora accesibilidad y facilita el SEO-->
+
+            <div class="logo"> <!---class es un atributo que se utiliza para asignar una o varias clases a un elemento HTML, 
+                                lo que permite aplicar estilos CSS específicos o seleccionar el elemento mediante JavaScript -->
+
+                                <!-- La clase "logo" se utiliza para identificar y aplicar estilos al contenedor del logo de la página -->
+
+                Premium Homes
+                <!-- El div es un contenedor genérico que se utiliza para agrupar elementos y aplicar estilos o scripts -->
+                <!-- Lo que acabo de hacer es crear un contenedor para el logo de la página -->
+            </div>
+            <ul class="nav_links"> <!--- La clase "nav_links" se utiliza para identificar y aplicar estilos a 
+                                    la lista de enlaces de navegación -->
+
+                <!-- La etiqueta <ul> define una lista desordenada -->
+                <!-- Es decir una lista de elementos que no tienen un orden específico -->
+
+                <li> <!-- La etiqueta <li> define un elemento de una lista -->
+                    <a href="#"> Inicio </a> 
+                    <!-- La etiqueta <a> define un hipervínculo -->
+                    <!-- El atributo href especifica la URL del enlace -->
+
+                </li>
+                <li> <a href="#propiedades"> Propiedades </a></li>
+                <li> <a href="#contacto"> Contacto </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero"> <!-- La etiqueta <section> define una sección en un documento -->
+            <!-- Se utiliza para agrupar contenido relacionado -->
+
+            <h1> Bienvenidos</h1>
+            <!-- La etiqueta <h1> define un encabezado de nivel 1 -->
+            <!-- Es el encabezado más importante de la página -->
+
+            <p> Encuentra la casa de tus sueños con nosotros. Ofrecemos las mejores propiedades en las ubicaciones más exclusivas. </p>
+            <!-- La etiqueta <p> define un párrafo -->
+
+            <button class="cta-button"> Ver Propiedades</button>
+            <!-- La etiqueta <button> define un botón clicable -->
+            <!-- La clase "cta-button" se utiliza para identificar y aplicar estilos al botón de llamada a la acción -->
+        </section>
+
+        <section id="propiedades">
+            <h2> Propiedades Destacadas </h2>
+            <div class="propiedades-grid">
+                <div class="propiedes-card">
+                    <!---La clase propiedes-card se utiliza para identificar y aplicar estilos a cada tarjeta de propiedad individual -->
+                <img src="img/propiedad1.jpeg" alt="Casa Moderna con piscina">
+                <h3>Villa Moderna</h3>
+                <p class="precio">$500,000</p>
+                <p class="descripcion">Una hermosa villa moderna con piscina y amplios jardines.</p>
+                <button>Ver Detalles</button>
+                </div> 
+            </div>
+
+            <div class="propiedades-grid">
+                <div class="propiedes-card">
+                    <!---La clase propiedes-card se utiliza para identificar y aplicar estilos a cada tarjeta de propiedad individual -->
+                <img src="img/propiedad2.jpeg" alt="Casa Moderna con piscina">
+                <h3>Villa de Lujo</h3>
+                <p class="precio">$700,000</p>
+                <p class="descripcion">Villa de lujo con acabados premium y vistas panorámicas.</p>
+                <button>Ver Detalles</button>
+                </div> 
+            </div>
+
+            <div class="propiedades-grid">
+                <div class="propiedes-card">
+                    <!---La clase propiedes-card se utiliza para identificar y aplicar estilos a cada tarjeta de propiedad individual -->
+                <img src="img/propiedad3.jpeg" alt="Casa Moderna con piscina">
+                <h3>Villa con Patio</h3>
+                <p class="precio">$300,000</p>
+                <p class="descripcion">Villa con un amplio patio ideal para reuniones familiares.</p>
+                <button>Ver Detalles</button>
+                </div> 
+            </div>
+            
+            <section id="contacto"></section>
+            <h2> Contacto </h2>
+            <form>
+                <!-- La etiqueta <form> define un formulario HTML para la entrada del usuario -->
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit"> Enviar </button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real Estate Company. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

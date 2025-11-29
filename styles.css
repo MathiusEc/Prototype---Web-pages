@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+    /* el '*' selecciona todos los elementos, es decir todos los elementos HTML de la página */
+    /* margin hace referencia al espacio exterior de un elemento */
+    /* padding hace referencia al espacio interior de un elemento */
+    /* box-sizing: border-box; hace que el padding y el border se incluyan en el ancho y alto total del elemento */
+    
+    /* En resumen, este bloque de código establece estilos básicos para todos los elementos de la página */
+}
+
+body {
+    line-height: 1.6;
+}
+
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del encabezado */
+}
+
+nav {
+    display: flex; /* Utiliza Flexbox para el diseño del menú de navegación */
+                   /* Flexbox es un modelo de diseño que facilita la distribución y alineación de elementos dentro de un contenedor */
+
+    justify-content: space-between; /* Distribuye los elementos del menú con espacio entre ellos */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    padding: 1rem 2rem; /* Espaciado interno del menú */   
+    max-width: 1200px; /* Ancho máximo del menú */
+    margin: 0 auto; /* Centra el menú horizontalmente */
+}
+
+.logo {
+    font-size: 1.5rem; /* Tamaño de fuente del logo */
+    font-weight: bold; /* Peso de fuente del logo */
+    color: #333; /* Color del texto del logo */
+}
+
+.nav_links {
+    display: flex; /* Utiliza Flexbox para los enlaces de navegación */
+    list-style: none; /* Elimina los puntos de la lista */
+    gap: 2rem; /* Espacio entre los enlaces */
+}
+
+.nav_links a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #333; /* Color del texto de los enlaces */
+}
+
+#hero {
+    padding-top: 2rem; /* Espaciado superior del área principal */
+    min-height: 100vh; /* Altura mínima del área principal */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/portada.jpeg); /* Imagen de fondo con un degradado oscuro para mejorar la legibilidad */
+
+    background-size: cover;
+    background-position: center; /* Centra la imagen de fondo */
+    display: flex; /* Utiliza Flexbox para el diseño del área principal */
+    flex-direction: column; /* Alinea los elementos en una columna */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Centra el texto */
+    color: #fff; /* Color del texto */
+    padding: 0 1rem; /* Espaciado horizontal */
+}
+
+#hero h1 {
+    font-size: 3rem; /* Tamaño de fuente del título principal */
+    margin-bottom: 1rem; /* Espaciado inferior del título principal */
+}
+
+.cta-button{
+   background-color: #ff6b6b; /* Color de fondo del botón */
+   color: white; /* Color del texto del botón */
+   border: none; /* Sin borde */
+   padding: 1rem 2rem; /* Espaciado interno del botón */
+   border-radius: 5px; /* Bordes redondeados del botón */
+   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+   margin-top: 2rem; /* Espaciado superior del botón */
+}
+
+.cta-button:hover {
+    background-color: #f85050; /* Color de fondo del botón al pasar el cursor */
+}
+
+#propiedades {
+    padding: 4rem 2rem; /* Espaciado interno de la sección de propiedades */
+    max-width: 1200px; /* Ancho máximo de la sección de propiedades */
+    margin: 0 auto; /* Centra la sección de propiedades horizontalmente */
+}
+
+#propiedades h2 {
+    text-align: center; /* Centra el título de la sección de propiedades */
+    margin-bottom: 2rem; /* Espaciado inferior del título de la sección de propiedades */
+}
+
+.propiedades-grid{
+    display: grid; /* Utiliza Grid Layout para el diseño de las propiedades */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Define las columnas de la cuadrícula */
+    gap: 2rem; /* Espacio entre los elementos de la cuadrícula */
+}
+
+.propiedes-card{
+    background: #fff; /* Color de fondo de las tarjetas de propiedades */
+    border-radius: 10px; /* Bordes redondeados de las tarjetas de propiedades */
+    overflow: hidden; /* Oculta el desbordamiento de las tarjetas de propiedades */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor de las tarjetas de propiedades */
+}
+
+.propiedes-card img {
+    width: 100%; /* Ancho completo de la imagen */
+    height: 200px; /* Altura fija de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionarse */
+}
+
+.propiedes-card h3{
+    padding: 1rem; /* Espaciado interno del título de la tarjeta de propiedades */
+    color: #333; /* Color del texto del título de la tarjeta de propiedades */
+}
+
+.precio{
+    color: #ff6b6b; /* Color del texto del precio */
+    font-weight: bold; /* Peso de fuente del precio */
+    padding:  0 1rem; /* Espaciado horizontal del precio */
+}
+
+.descripcion{
+    padding: .5rem 1rem; /* Espaciado interno de la descripción */
+    color: #666; /* Color del texto de la descripción */
+}
+
+.propiedes-card button{
+    margin: 1rem; /* Espaciado alrededor del botón */
+    padding: .5rem 1rem; /* Espaciado interno del botón */
+    background-color: #333; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */  
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.propiedes-card button:hover {
+    background-color: #000000; /* Color de fondo del botón al pasar el cursor */
+}
+
+#contacto {
+    background-color: #f9f9f9; /* Color de fondo de la sección de contacto */
+    padding: 4rem 2rem; /* Espaciado interno de la sección de contacto */
+}
+
+#contacto h2 {
+    text-align: center; /* Centra el título de la sección de contacto */
+    margin-bottom: 2rem; /* Espaciado inferior del título de la sección de contacto */
+}
+
+form {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    display: flex; /* Utiliza Flexbox para el diseño del formulario */
+    flex-direction: column; /* Alinea los elementos en una columna */
+    gap: 1rem; /* Espacio entre los elementos del formulario */
+}
+
+input, textarea {
+    padding: 0.8rem; /* Espaciado interno de los campos de entrada */
+    border: 1px solid #ddd; /* Borde de los campos de entrada */
+    border-radius: 5px; /* Bordes redondeados de los campos de entrada */
+}
+
+textarea{
+    height: 150px; /* Altura del área de texto */
+    resize: vertical; /* Permite redimensionar el área de texto verticalmente */
+}
+
+form button {
+    padding: 1rem; /* Espaciado interno del botón */
+    background-color: #ff6b6b; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+form button:hover {
+    background-color: #f85050; /* Color de fondo del botón al pasar el cursor */
+}
+
+footer {
+    background-color: #333; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    text-align: center; /* Centra el texto del pie de página */
+    padding: 1rem; /* Espaciado interno del pie de página */   
+}
+
+@media (max-width: 430px) {
+    nav{
+        flex-direction: column; /* Cambia la dirección del menú de navegación a columna en pantallas pequeñas */
+        padding: 1rem; /* Espacio entre los elementos del menú de navegación */
+    }
+
+    .nav_links {
+        flex-direction: column; /* Cambia la dirección de los enlaces de navegación a columna en pantallas pequeñas */
+        text-align: center; /* Centra el texto de los enlaces de navegación */
+        gap: 1rem; /* Espacio entre los enlaces de navegación */
+        margin-top: 1rem; /* Espaciado superior de los enlaces de navegación */
+    }
+}
