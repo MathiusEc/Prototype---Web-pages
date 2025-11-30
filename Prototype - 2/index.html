@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype - 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">TuLogo</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Servicios Profesionales de Drones</h1>
+            <p>Fotografía aérea, mapeo y más</p>
+            <a href="#contacto" class="btn">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card fade">
+                <h3>Fotografía Aérea</h3>
+                <p>Capturamos imágenes únicas desde el cielo</p>
+            </div>
+            <div class="servicio-card fade">
+                <h3>Video Profesional</h3>
+                <p>Videos cinematográficos en 4K</p>
+            </div>
+            <div class="servicio-card fade">
+                <h3>Mapeo y Topografía</h3>
+                <p>Levantamientos precisos con drones</p>
+            </div>
+        </div>
+        
+        <!-- Contador de promoción -->
+        <div style="margin-top: 3rem;">
+            <h3>¡Promoción especial!</h3>
+            <p id="countdown">Cargando...</p>
+            <button id="promoBtn" class="btn" style="margin-top: 1rem;">Ver más detalles</button>
+        </div>
+    </section>
+    
+    <!-- Slider de testimonios -->
+    <section class="slider-section" style="padding: 5rem 5%; background: #f9f9f9; text-align: center;">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="slider-container" style="max-width: 600px; margin: 2rem auto; min-height: 150px;">
+            <div class="slide">
+                <p>"Excelente servicio, las fotos quedaron increíbles"</p>
+                <strong>- Juan Pérez</strong>
+            </div>
+            <div class="slide" style="display: none;">
+                <p>"Muy profesionales y puntuales"</p>
+                <strong>- María González</strong>
+            </div>
+            <div class="slide" style="display: none;">
+                <p>"Superó nuestras expectativas"</p>
+                <strong>- Carlos Rodríguez</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu email" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tu Empresa.  Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Modal de promoción -->
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>¡Suscríbete a nuestras promociones!</h2>
+            <p>Recibe descuentos exclusivos en nuestros servicios</p>
+            <form style="margin-top: 1rem;">
+                <input type="email" placeholder="Tu correo electrónico" style="padding: 0.8rem; width: 100%; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+                <button type="submit" class="btn">Suscribirme</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
