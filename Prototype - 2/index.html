@@ -1,105 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype - 2</title>
+    <title>Servicios Profesionales de Drones</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="logo">TuLogo</div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <!-- HEADER con Navegación -->
+    <header>
+        <nav>
+            <div class="logo">🚁 DronesPro</div>
+            <ul class="nav_links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO Section -->
+    <section id="hero">
         <div class="hero-content">
-            <h1>Servicios Profesionales de Drones</h1>
-            <p>Fotografía aérea, mapeo y más</p>
-            <a href="#contacto" class="btn">Contáctanos</a>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="servicios-grid">
-            <div class="servicio-card fade">
-                <h3>Fotografía Aérea</h3>
-                <p>Capturamos imágenes únicas desde el cielo</p>
-            </div>
-            <div class="servicio-card fade">
-                <h3>Video Profesional</h3>
-                <p>Videos cinematográficos en 4K</p>
-            </div>
-            <div class="servicio-card fade">
-                <h3>Mapeo y Topografía</h3>
-                <p>Levantamientos precisos con drones</p>
-            </div>
+            <h1 class="fade-in-up">Servicios Profesionales de Drones</h1>
+            
+            <!-- TEXTO ROTATIVO - Similar a RotatingText -->
+            <p class="fade-in-up delay-1">Especialistas en 
+                <span class="rotating-text-container">
+                    <span class="rotating-text">
+                        <span>Fotografía Aérea</span>
+                        <span>Video 4K</span>
+                        <span>Mapeo</span>
+                        <span>Inspección</span>
+                    </span>
+                </span>
+            </p>
+            
+            <button class="cta-button fade-in-up delay-2">Solicitar Cotización</button>
         </div>
         
-        <!-- Contador de promoción -->
-        <div style="margin-top: 3rem;">
-            <h3>¡Promoción especial!</h3>
-            <p id="countdown">Cargando...</p>
-            <button id="promoBtn" class="btn" style="margin-top: 1rem;">Ver más detalles</button>
-        </div>
-    </section>
-    
-    <!-- Slider de testimonios -->
-    <section class="slider-section" style="padding: 5rem 5%; background: #f9f9f9; text-align: center;">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <div class="slider-container" style="max-width: 600px; margin: 2rem auto; min-height: 150px;">
-            <div class="slide">
-                <p>"Excelente servicio, las fotos quedaron increíbles"</p>
-                <strong>- Juan Pérez</strong>
-            </div>
-            <div class="slide" style="display: none;">
-                <p>"Muy profesionales y puntuales"</p>
-                <strong>- María González</strong>
-            </div>
-            <div class="slide" style="display: none;">
-                <p>"Superó nuestras expectativas"</p>
-                <strong>- Carlos Rodríguez</strong>
-            </div>
+        <!-- Flecha animada para scroll -->
+        <div class="scroll-indicator">
+            <span>↓</span>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu email" required>
-            <textarea placeholder="Tu mensaje" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
+    <!-- SERVICIOS Section -->
+    <section id="servicios">
+        <h2 class="animate-on-scroll">Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            
+            <!-- Las tarjetas se animan al hacer scroll -->
+            <div class="servicio-card animate-on-scroll from-left">
+                <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" 
+                     alt="Drone volando sobre paisaje">
+                <h3>Fotografía Aérea</h3>
+                <p class="precio">Desde $150 USD</p>
+                <p class="descripcion">Capturamos imágenes únicas desde el cielo para eventos, propiedades y proyectos especiales.</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="servicio-card animate-on-scroll from-bottom">
+                <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600" 
+                     alt="Drone con cámara profesional">
+                <h3>Video Profesional 4K</h3>
+                <p class="precio">Desde $300 USD</p>
+                <p class="descripcion">Videos cinematográficos en alta definición para publicidad, bodas y documentales.</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="servicio-card animate-on-scroll from-right">
+                <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600" 
+                     alt="Drone para mapeo">
+                <h3>Mapeo y Topografía</h3>
+                <p class="precio">Desde $500 USD</p>
+                <p class="descripcion">Levantamientos precisos con drones para construcción, agricultura y minería.</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="servicio-card animate-on-scroll from-left">
+                <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=600" 
+                     alt="Inspección con drone">
+                <h3>Inspección Industrial</h3>
+                <p class="precio">Desde $400 USD</p>
+                <p class="descripcion">Inspección de torres, techos, paneles solares y estructuras de difícil acceso. </p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="servicio-card animate-on-scroll from-bottom">
+                <img src="https://images.unsplash.com/photo-1506947411487-a56738571d98?w=600" 
+                     alt="Drone en evento">
+                <h3>Cobertura de Eventos</h3>
+                <p class="precio">Desde $250 USD</p>
+                <p class="descripcion">Captura aérea de bodas, conciertos, eventos deportivos y corporativos.</p>
+                <button>Ver más</button>
+            </div>
+
+            <div class="servicio-card animate-on-scroll from-right">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" 
+                     alt="Equipo de drones">
+                <h3>Capacitación</h3>
+                <p class="precio">Desde $200 USD</p>
+                <p class="descripcion">Cursos de pilotaje de drones para principiantes y profesionales.</p>
+                <button>Ver más</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERÍA Section -->
+    <section id="galeria">
+        <h2 class="animate-on-scroll">Nuestra Galería</h2>
+        <div class="galeria-grid">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400" alt="Trabajo 1" class="animate-on-scroll scale-in">
+            <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=400" alt="Trabajo 2" class="animate-on-scroll scale-in">
+            <img src="https://images.unsplash.com/photo-1524143986875-3b098d78b363?w=400" alt="Trabajo 3" class="animate-on-scroll scale-in">
+            <img src="https://images.unsplash.com/photo-1559854036-2409f0a4a699?w=400" alt="Trabajo 4" class="animate-on-scroll scale-in">
+            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400" alt="Trabajo 5" class="animate-on-scroll scale-in">
+            <img src="https://images.unsplash.com/photo-1533310266094-8898a03807dd?w=400" alt="Trabajo 6" class="animate-on-scroll scale-in">
+        </div>
+    </section>
+
+    <!-- CONTACTO Section -->
+    <section id="contacto">
+        <h2 class="animate-on-scroll">Contáctanos</h2>
+        <form class="animate-on-scroll from-bottom">
+            <input type="text" placeholder="Tu nombre completo" required>
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <input type="tel" placeholder="Tu teléfono (opcional)">
+            <textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
         </form>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Tu Empresa.  Todos los derechos reservados.</p>
+        <p>&copy; 2025 DronesPro. Todos los derechos reservados. </p>
+        <p>📍 Tu Ciudad | 📞 +1 234 567 890 | ✉️ info@dronespro.com</p>
     </footer>
-    
-    <!-- Modal de promoción -->
-    <div id="promoModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2>¡Suscríbete a nuestras promociones!</h2>
-            <p>Recibe descuentos exclusivos en nuestros servicios</p>
-            <form style="margin-top: 1rem;">
-                <input type="email" placeholder="Tu correo electrónico" style="padding: 0.8rem; width: 100%; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
-                <button type="submit" class="btn">Suscribirme</button>
-            </form>
-        </div>
-    </div>
-    
+
+    <!-- JavaScript para animaciones al scroll -->
     <script src="script.js"></script>
 </body>
 </html>

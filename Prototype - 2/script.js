@@ -1,72 +1,114 @@
-// script.js
+/* ============================================
+   🎬 ANIMACIONES AL SCROLL
+   Similar a AnimatedContent pero en Vanilla JS
+   ============================================ */
 
-// 1. Validación de formulario de contacto
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      const email = form.querySelector("input[type='email']").value;
-      if (!email.includes("@")) {
-        alert("Por favor ingresa un correo válido.");
+// Función que detecta cuando un elemento entra en la pantalla
+function animateOnScroll() {
+    // Selecciona todos los elementos que tienen la clase 'animate-on-scroll'
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach((element, index) => {
+        // Obtiene la posición del elemento respecto a la ventana
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        // Altura de la ventana
+        const windowHeight = window.innerHeight;
+        
+        // Si el elemento está visible (con un margen del 20%)
+        const triggerPoint = windowHeight * 0.85;
+        
+        if (elementTop < triggerPoint && elementBottom > 0) {
+            // Añade un pequeño delay escalonado para cada elemento
+            setTimeout(() => {
+                element.classList.add('visible');
+            }, index * 100); // 100ms de diferencia entre cada uno
+        }
+    });
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Ejecutar una vez al inicio
+    animateOnScroll();
+    
+    // Ejecutar cada vez que se hace scroll
+    window.addEventListener('scroll', animateOnScroll);
+});
+
+/* ============================================
+   🎬 EFECTO PARALLAX SUAVE EN EL HERO
+   ============================================ */
+
+window.addEventListener('scroll', () => {
+    const hero = document.getElementById('hero');
+    const scrolled = window.pageYOffset;
+    
+    // Mueve el fondo más lento que el scroll (efecto parallax)
+    if (hero) {
+        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+    }
+});
+
+/* ============================================
+   🎬 NAVEGACIÓN SUAVE AL HACER CLIC EN LINKS
+   ============================================ */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-      }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',  // Scroll suave
+                block: 'start'
+            });
+        }
     });
-  }
 });
 
-// 2. Animaciones al hacer scroll (fade-in)
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade").forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight) {
-      el.classList.add("visible");
-    }
-  });
-});
+/* ============================================
+   🎬 HEADER QUE CAMBIA AL HACER SCROLL
+   ============================================ */
 
-// 3. Slider automático de imágenes/testimonios
-let index = 0;
-function showSlides() {
-  const slides = document.querySelectorAll(".slide");
-  slides.forEach(s => s.style.display = "none");
-  if (slides.length > 0) {
-    slides[index].style.display = "block";
-    index = (index + 1) % slides.length;
-  }
-}
-setInterval(showSlides, 3000);
-
-// 4. Contador regresivo para promociones
-function countdown() {
-  const endDate = new Date("Dec 31, 2025 23:59:59").getTime();
-  const now = new Date().getTime();
-  const distance = endDate - now;
-  const countdownEl = document.getElementById("countdown");
-
-  if (countdownEl) {
-    if (distance > 0) {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      countdownEl.innerText = days + " días restantes";
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.15)';
     } else {
-      countdownEl.innerText = "¡Promoción finalizada!";
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
-  }
-}
-setInterval(countdown, 1000);
-
-// 5. Pop-up de suscripción
-document.addEventListener("DOMContentLoaded", () => {
-  const promoBtn = document.getElementById("promoBtn");
-  const promoModal = document.getElementById("promoModal");
-  const closeBtn = document.getElementById("closeModal");
-
-  if (promoBtn && promoModal) {
-    promoBtn.addEventListener("click", () => {
-      promoModal.style.display = "block";
-    });
-  }
-  if (closeBtn && promoModal) {
-    closeBtn.addEventListener("click", () => {
-      promoModal.style.display = "none";
-    });
-  }
 });
+
+/* ============================================
+   🎬 EFECTO DE ESCRITURA (TYPEWRITER) - OPCIONAL
+   Descomenta si quieres usarlo
+   ============================================ */
+
+/*
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Ejemplo de uso:
+// const titulo = document.querySelector('#hero h1');
+// typeWriter(titulo, 'Servicios Profesionales de Drones', 80);
+*/

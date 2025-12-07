@@ -1,214 +1,508 @@
-/* Reset básico */
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Evita scroll horizontal por las animaciones */
 }
 
-/* Navegación */
-.navbar {
+/* ============================================
+   HEADER Y NAVEGACIÓN
+   ============================================ */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-    color: white;
     font-size: 1.5rem;
     font-weight: bold;
+    color: #333;
 }
 
-.nav-links {
+.nav_links {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.nav-links a {
-    color: white;
+.nav_links a {
     text-decoration: none;
-    transition: color 0.3s;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #00d4ff;
+/* Línea animada debajo del link */
+.nav_links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('tu-imagen-drone.jpg') center/cover;
+.nav_links a:hover::after {
+    width: 100%;
+}
+
+.nav_links a:hover {
+    color: #ff6b6b;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+#hero {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    color: white;
+    color: #fff;
+    padding: 0 1rem;
+    position: relative;
 }
 
-.hero h1 {
+.hero-content {
+    max-width: 800px;
+}
+
+#hero h1 {
     font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero p {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.btn {
+/* ============================================
+   🎬 TEXTO ROTATIVO - Similar a RotatingText
+   ============================================ */
+.rotating-text-container {
     display: inline-block;
-    padding: 1rem 2rem;
-    background: #00d4ff;
-    color: white;
-    text-decoration: none;
+    height: 1.5em;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.rotating-text {
+    display: flex;
+    flex-direction: column;
+    animation: rotateText 8s infinite;
+}
+
+.rotating-text span {
+    display: block;
+    height: 1.5em;
+    padding: 0 10px;
+    background: #ff6b6b;
     border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+@keyframes rotateText {
+    0%, 20% {
+        transform: translateY(0);
+    }
+    25%, 45% {
+        transform: translateY(-1.5em);
+    }
+    50%, 70% {
+        transform: translateY(-3em);
+    }
+    75%, 95% {
+        transform: translateY(-4.5em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   🎬 ANIMACIÓN FADE IN UP (para Hero)
+   ============================================ */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   🎬 FLECHA DE SCROLL ANIMADA
+   ============================================ */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ============================================
+   BOTÓN CTA
+   ============================================ */
+.cta-button {
+    background-color: #ff6b6b;
+    color: white;
     border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn:hover {
-    background: #00a8cc;
+/* Efecto de brillo en el botón */
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
 }
 
-/* Servicios */
-.servicios {
-    padding: 5rem 5%;
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    background-color: #f85050;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* ============================================
+   🎬 ANIMACIONES AL SCROLL (JavaScript las activa)
+   ============================================ */
+
+/* Estado inicial - elementos ocultos */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desde abajo (default) */
+.animate-on-scroll {
+    transform: translateY(60px);
+}
+
+/* Desde la izquierda */
+.animate-on-scroll.from-left {
+    transform: translateX(-60px);
+}
+
+/* Desde la derecha */
+.animate-on-scroll.from-right {
+    transform: translateX(60px);
+}
+
+/* Desde abajo */
+.animate-on-scroll.from-bottom {
+    transform: translateY(60px);
+}
+
+/* Efecto de escala */
+.animate-on-scroll.scale-in {
+    transform: scale(0.8);
+}
+
+/* Estado visible - cuando JavaScript añade la clase */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* ============================================
+   SERVICIOS SECTION
+   ============================================ */
+#servicios {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#servicios h2 {
     text-align: center;
-}
-
-.servicios h2 {
     margin-bottom: 3rem;
     font-size: 2.5rem;
+    color: #333;
 }
 
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .servicio-card {
-    padding: 2rem;
-    background: #f4f4f4;
-    border-radius: 10px;
-    transition: transform 0. 3s;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .servicio-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Animaciones fade-in */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Modal estilos */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
+.servicio-card img {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    animation: slideDown 0.3s ease;
+.servicio-card:hover img {
+    transform: scale(1.1);
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.servicio-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #333;
+    font-size: 1.3rem;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+.servicio-card .precio {
+    color: #ff6b6b;
     font-weight: bold;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+}
+
+.servicio-card .descripcion {
+    padding: 0.5rem 1rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.servicio-card button {
+    margin: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    line-height: 20px;
+    transition: all 0.3s ease;
 }
 
-.close:hover {
-    color: #000;
+.servicio-card button:hover {
+    background-color: #ff6b6b;
+    transform: translateX(5px);
 }
 
-/* Contacto */
-.contacto {
-    padding: 5rem 5%;
-    background: #1a1a2e;
-    color: white;
+/* ============================================
+   GALERÍA SECTION
+   ============================================ */
+#galeria {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+}
+
+#galeria h2 {
     text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
 }
 
-.contact-form {
-    max-width: 500px;
-    margin: 2rem auto;
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* ============================================
+   CONTACTO SECTION
+   ============================================ */
+#contacto {
+    background: linear-gradient(135deg, #333 0%, #1a1a2e 100%);
+    color: #fff;
+    padding: 5rem 2rem;
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+input, textarea {
     padding: 1rem;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid transparent;
+    border-radius: 10px;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.contact-form textarea {
-    min-height: 150px;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
 }
 
-/* Footer */
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form button {
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f85050 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
-    padding: 2rem;
-    background: #0f0f1a;
-    color: white;
+    background-color: #111;
+    color: #fff;
     text-align: center;
+    padding: 2rem 1rem;
 }
 
-/* Responsive */
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 768px) {
-    .hero h1 {
+    #hero h1 {
         font-size: 2rem;
     }
-    
-    .nav-links {
+
+    #hero p {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        text-align: center;
         gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .rotating-text-container {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    #servicios h2,
+    #galeria h2,
+    #contacto h2 {
+        font-size: 1.8rem;
     }
 }
