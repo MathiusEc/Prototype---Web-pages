@@ -335,16 +335,15 @@ nav {
    Se usa en el hero para que los elementos aparezcan
    de forma escalonada (título, párrafo, botones)
    ============================================ */
+
+/* Siempre visible - sin animaciones que oculten */
 .fade-in-up {
-    opacity: 0;                     /* Comienza invisible */
-    transform: translateY(30px);    /* Comienza 30px abajo */
-    animation: fadeInUp 0.8s ease forwards; /* forwards mantiene el estado final */
+    opacity: 1;
+    transform: none;
 }
 
-/* Delays para crear efecto cascada */
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
+/* Delays no hacen nada si no hay animación */
+.delay-1, .delay-2, .delay-3 { opacity: 1; }
 
 @keyframes fadeInUp {
     to {
@@ -368,53 +367,34 @@ nav {
    CÓMO USAR:
    <div class="animate-on-scroll from-left">Contenido</div>
    ============================================ */
+
+/* Siempre visible - sin animaciones que oculten */
 .animate-on-scroll {
-    opacity: 0;  /* Comienza invisible */
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Curva de aceleración suave */
+    opacity: 1;
+    transform: none;
 }
 
-/* Direcciones de entrada */
-.animate-on-scroll { transform: translateY(40px); }  /* Default: desde abajo */
-.animate-on-scroll.from-left { 
-    transform: translateX(-60px);  /* Desde la izquierda */
-    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.animate-on-scroll.from-right { 
-    transform: translateX(60px);   /* Desde la derecha */
-    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.animate-on-scroll.from-bottom { 
-    transform: translateY(60px);   /* Desde abajo (más pronunciado) */
-    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.animate-on-scroll.scale-in { 
-    transform: scale(0.85);        /* Comienza más pequeño */
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efecto elástico */
+/* Todas las variantes también visibles */
+.animate-on-scroll.from-left,
+.animate-on-scroll.from-right,
+.animate-on-scroll.from-bottom,
+.animate-on-scroll.scale-in,
+.animate-on-scroll.bounce-effect {
+    opacity: 1;
+    transform: none;
 }
 
-/* Elementos con efecto bounce más pronunciado (solo elementos destacados) */
-.animate-on-scroll.bounce-effect { 
-    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1); /* Curva más "saltarina" */
-}
-
-/* Estado visible - JavaScript añade esta clase */
+/* Estado visible - no hace nada ahora */
 .animate-on-scroll.visible {
-    opacity:  1;
-    transform: translateY(0) translateX(0) scale(1) rotate(0deg); /* Vuelve a posición normal */
+    opacity: 1;
+    transform: none;
 }
 
-/* Variaciones de velocidad para más dinamismo */
-.animate-on-scroll.slow { transition-duration: 1.2s; }  /* Animación lenta */
-.animate-on-scroll.fast { transition-duration: 0.5s; }  /* Animación rápida */
-
-/* Delays escalonados para efecto cascada
-   Los elementos hermanos aparecen uno tras otro */
-.animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
-.animate-on-scroll:nth-child(2) { transition-delay: 80ms; }
-.animate-on-scroll:nth-child(3) { transition-delay: 160ms; }
-.animate-on-scroll:nth-child(4) { transition-delay: 240ms; }
-.animate-on-scroll:nth-child(5) { transition-delay: 320ms; }
-.animate-on-scroll:nth-child(6) { transition-delay: 400ms; }
+/* Sin delays ni transiciones que oculten contenido */
+.animate-on-scroll.slow,
+.animate-on-scroll.fast {
+    opacity: 1;
+}
 
 /* ============================================
    ESTADÍSTICAS
@@ -1392,6 +1372,16 @@ footer {
 .mvv-card ul li {
     padding: 0.5rem 0;
     color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mvv-card ul li svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primario);
+    flex-shrink: 0;
 }
 
 /* Equipo */
@@ -1458,11 +1448,27 @@ footer {
     padding: 10px;
     border-radius: 50%;
     transition: var(--transicion);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.miembro-social a svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-texto);
+    transition: var(--transicion);
 }
 
 .miembro-social a:hover {
     background:  var(--color-primario);
     transform: scale(1.1);
+}
+
+.miembro-social a:hover svg {
+    color: white;
 }
 
 /* Timeline */
