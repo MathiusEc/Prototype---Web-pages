@@ -1,55 +1,65 @@
 /* ============================================
    RESET Y ESTILOS BASE
+   Elimina los márgenes y paddings por defecto del navegador.
+   box-sizing: border-box hace que el ancho incluya padding y border.
+   Esto facilita el control del tamaño de los elementos.
    ============================================ */
 * {
     margin:  0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box; /* El padding y border no aumentan el tamaño total */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fuente por defecto */
 }
 
 body {
-    line-height: 1.6;
-    color:  #333;
-    overflow-x: hidden;
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    color:  #333; /* Color de texto principal */
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 /* ============================================
-   VARIABLES DE COLORES
+   VARIABLES DE COLORES (CSS Custom Properties)
+   Define los colores principales del sitio en un solo lugar.
+   Ventaja: Puedes cambiar todo el esquema de colores
+   modificando solo estas variables.
+   Uso: color: var(--color-primario);
    ============================================ */
 :root {
-    --color-primario: #2E7D32;
-    --color-secundario: #FF6B6B;
-    --color-oscuro: #1a1a2e;
-    --color-texto: #333;
-    --color-fondo:  #f9f9f9;
-    --color-blanco: #ffffff;
-    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --sombra-fuerte: 0 15px 40px rgba(0, 0, 0, 0.2);
-    --transicion:  all 0.3s ease;
+    --color-primario: #2E7D32;    /* Verde principal (agricultura) */
+    --color-secundario: #FF6B6B;  /* Rojo/coral para acentos */
+    --color-oscuro: #1a1a2e;      /* Azul oscuro para textos */
+    --color-texto: #333;          /* Gris oscuro para texto normal */
+    --color-fondo:  #f9f9f9;      /* Gris claro para fondos */
+    --color-blanco: #ffffff;      /* Blanco puro */
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.1);      /* Sombra ligera para tarjetas */
+    --sombra-fuerte: 0 15px 40px rgba(0, 0, 0, 0.2);    /* Sombra pronunciada para hover */
+    --transicion:  all 0.3s ease; /* Transición suave para animaciones */
 }
 
 /* ============================================
    HEADER - Barra de navegación fija
+   position: fixed mantiene el header visible al hacer scroll
+   z-index: 1000 lo coloca por encima de otros elementos
+   backdrop-filter crea efecto de desenfoque en el fondo (moderno)
    ============================================ */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semi-transparente */
     box-shadow:  0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    position: fixed;  /* Fijo en la parte superior */
     width: 100%;
     top:  0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    z-index: 1000;    /* Apila por encima del contenido */
+    backdrop-filter: blur(10px); /* Desenfoca el fondo */
     transition: var(--transicion);
 }
 
 nav {
-    display:  flex;
-    justify-content: space-between;
-    align-items: center;
+    display:  flex;            /* Layout flexbox */
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+    align-items: center;       /* Centra verticalmente */
     padding: 1rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px;        /* Ancho máximo del contenido */
+    margin: 0 auto;           /* Centrado horizontal */
 }
 
 .logo {
@@ -321,13 +331,17 @@ nav {
 
 /* ============================================
    ANIMACIONES FADE IN UP
+   Animación de aparición con movimiento hacia arriba
+   Se usa en el hero para que los elementos aparezcan
+   de forma escalonada (título, párrafo, botones)
    ============================================ */
 .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;                     /* Comienza invisible */
+    transform: translateY(30px);    /* Comienza 30px abajo */
+    animation: fadeInUp 0.8s ease forwards; /* forwards mantiene el estado final */
 }
 
+/* Delays para crear efecto cascada */
 .delay-1 { animation-delay: 0.3s; }
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 0.9s; }
@@ -341,45 +355,60 @@ nav {
 
 /* ============================================
    ANIMACIONES AL SCROLL
+   Sistema principal de animaciones que se activa
+   cuando los elementos entran en el viewport.
+   
+   CLASES PRINCIPALES:
+   - .animate-on-scroll: Clase base para activar animaciones
+   - .visible: Se añade vía JavaScript cuando entra en viewport
+   - .from-left/right/bottom: Dirección de entrada
+   - .scale-in: Animación de escala
+   - .bounce-effect: Efecto de rebote (solo para elementos especiales)
+   
+   CÓMO USAR:
+   <div class="animate-on-scroll from-left">Contenido</div>
    ============================================ */
 .animate-on-scroll {
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;  /* Comienza invisible */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Curva de aceleración suave */
 }
 
-.animate-on-scroll { transform: translateY(40px); }
+/* Direcciones de entrada */
+.animate-on-scroll { transform: translateY(40px); }  /* Default: desde abajo */
 .animate-on-scroll.from-left { 
-    transform: translateX(-60px); 
+    transform: translateX(-60px);  /* Desde la izquierda */
     transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .animate-on-scroll.from-right { 
-    transform: translateX(60px); 
+    transform: translateX(60px);   /* Desde la derecha */
     transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .animate-on-scroll.from-bottom { 
-    transform: translateY(60px); 
+    transform: translateY(60px);   /* Desde abajo (más pronunciado) */
     transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .animate-on-scroll.scale-in { 
-    transform: scale(0.85); 
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.85);        /* Comienza más pequeño */
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efecto elástico */
 }
 
 /* Elementos con efecto bounce más pronunciado (solo elementos destacados) */
 .animate-on-scroll.bounce-effect { 
-    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1); /* Curva más "saltarina" */
 }
 
+/* Estado visible - JavaScript añade esta clase */
 .animate-on-scroll.visible {
     opacity:  1;
-    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg); /* Vuelve a posición normal */
 }
 
 /* Variaciones de velocidad para más dinamismo */
-.animate-on-scroll.slow { transition-duration: 1.2s; }
-.animate-on-scroll.fast { transition-duration: 0.5s; }
+.animate-on-scroll.slow { transition-duration: 1.2s; }  /* Animación lenta */
+.animate-on-scroll.fast { transition-duration: 0.5s; }  /* Animación rápida */
 
-/* Delays escalonados para efecto cascada */
+/* Delays escalonados para efecto cascada
+   Los elementos hermanos aparecen uno tras otro */
 .animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
 .animate-on-scroll:nth-child(2) { transition-delay: 80ms; }
 .animate-on-scroll:nth-child(3) { transition-delay: 160ms; }
@@ -637,6 +666,12 @@ section h2::after {
 .testimonio-stars {
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    color: #FFC107;
+}
+
+.stars {
+    color: #FFC107;
+    letter-spacing: 2px;
 }
 
 .testimonio-text {
@@ -817,6 +852,17 @@ section h2::after {
     background: rgba(255,255,255,0.1);
     padding: 10px;
     border-radius: 10px;
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
 }
 
 .info-item strong {
@@ -846,6 +892,14 @@ section h2::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 .social-link:hover {

@@ -1,8 +1,12 @@
 /* ============================================
    ANIMACIONES AL SCROLL
+   Esta función detecta cuando los elementos entran en el viewport
+   y les agrega la clase 'visible' para activar las animaciones CSS.
+   También aplica efectos de rebote solo a elementos específicos.
    ============================================ */
 
 function animateOnScroll() {
+    // Selecciona todos los elementos que tienen la clase 'animate-on-scroll'
     const elements = document.querySelectorAll('.animate-on-scroll');
     
     elements.forEach((element, index) => {
@@ -47,9 +51,13 @@ if (!document.querySelector('#scroll-animation-styles')) {
 
 /* ============================================
    CONTADORES ANIMADOS
+   Anima números desde 0 hasta su valor objetivo cuando entran
+   en el viewport. Útil para estadísticas y métricas.
+   Usa requestAnimationFrame para animaciones suaves.
    ============================================ */
 
 function animateCounters() {
+    // Busca todos los elementos con clase '.stat-number'
     const counters = document.querySelectorAll('.stat-number');
     
     counters.forEach(counter => {
@@ -87,8 +95,12 @@ function animateCounters() {
 
 /* ============================================
    NAVEGACIÓN SUAVE
+   Permite hacer scroll suave a las secciones cuando se hace clic
+   en enlaces internos (que empiezan con #).
+   También cierra el menú móvil si está abierto.
    ============================================ */
 
+// Para cada enlace que empiece con "#"
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -117,8 +129,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
+});Controla el menú móvil (hamburguesa):
+   - Abre/cierra el menú al hacer clic en el icono
+   - Cierra automáticamente al hacer clic en un enlace
+   - Cierra al hacer clic fuera del menú
+   ============================================ */
 
+// Seleccionar el botón hamburguesa y el menú de navegación
 /* ============================================
    MENÚ HAMBURGUESA
    ============================================ */
@@ -146,9 +163,13 @@ if (menuToggle && navLinks) {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
         }
-    });
-}
+   Modifica el header según el scroll:
+   - Cambia el fondo y sombra al hacer scroll
+   - Oculta el header cuando se hace scroll hacia abajo
+   - Muestra el header cuando se hace scroll hacia arriba
+   ============================================ */
 
+let lastScroll = 0; // Guarda la posición del scroll anterior
 /* ============================================
    HEADER DINÁMICO AL SCROLL
    ============================================ */
@@ -178,11 +199,15 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
-});
-
-/* ============================================
-   EFECTO PARALLAX EN EL HERO
+});Crea un efecto de profundidad moviendo el video y contenido
+   a diferentes velocidades mientras se hace scroll.
+   El video se mueve más rápido que el contenido para crear profundidad.
    ============================================ */
+
+function parallaxEffect() {
+    // Busca la sección hero
+    const hero = document.getElementById('hero');
+    if (!hero) return; // Si no existe, salir de la función========================= */
 
 function parallaxEffect() {
     const hero = document.getElementById('hero');
@@ -200,8 +225,15 @@ function parallaxEffect() {
         if (content) {
             content.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
             content.style.transform = `translateY(${scrolled * 0.2}px)`;
-        }
-    }
+   Maneja el envío del formulario de contacto:
+   - Valida los campos requeridos
+   - Valida el formato del email
+   - Simula el envío (en producción iría a un servidor)
+   - Muestra mensajes de éxito o error
+   - Limpia el formulario después de enviar
+   ============================================ */
+
+// Selecciona el formulario de contacto    }
 }
 
 window.addEventListener('scroll', parallaxEffect);
@@ -269,8 +301,12 @@ if (contactForm) {
 }
 
 function showFormMessage(element, message, type) {
-    if (!element) return;
-    element.textContent = message;
+   Controla la flecha que aparece en la sección hero:
+   - Al hacer clic, hace scroll a la siguiente sección
+   - Se desvanece cuando el usuario hace scroll
+   ============================================ */
+
+// Selecciona el indicador de scroll (flecha ↓)    element.textContent = message;
     element.className = `form-message ${type}`;
     element.style.display = 'block';
     
@@ -291,8 +327,14 @@ if (scrollIndicator) {
         if (nextSection) {
             const headerHeight = document.querySelector('header')?.offsetHeight || 80;
             window.scrollTo({
-                top: nextSection.offsetTop - headerHeight,
-                behavior: 'smooth'
+   Abre un modal con video cuando se hace clic en el placeholder.
+   El modal puede cerrarse:
+   - Haciendo clic en la X
+   - Haciendo clic fuera del video
+   - Presionando la tecla Escape
+   ============================================ */
+
+// Busca el elemento placeholder de video                behavior: 'smooth'
             });
         }
     });
@@ -412,9 +454,13 @@ function openVideoModal() {
             modal.remove();
             style.remove();
             document.body.style.overflow = '';
-        }, 300);
-    };
-    
+   Anima números de porcentaje desde 0 hasta su valor final
+   cuando entran en el viewport. Similar a animateCounters()
+   pero específico para porcentajes.
+   ============================================ */
+
+function animatePercentages() {
+    // Busca todos los elementos con clase '.satisfaccion-numero'
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
     
@@ -453,8 +499,12 @@ function animatePercentages() {
                     const step = target / (duration / 16);
                     
                     const updateNumber = () => {
-                        current += step;
-                        if (current < target) {
+   Crea un efecto de onda (ripple) cuando se hace clic en un botón,
+   similar al Material Design de Google.
+   La onda se expande desde el punto donde se hizo clic.
+   ============================================ */
+
+// Para cada botón con clase '.cta-button'                        if (current < target) {
                             element.textContent = Math.floor(current) + (isPercentage ? '%' : '');
                             requestAnimationFrame(updateNumber);
                         } else {
@@ -500,8 +550,13 @@ document.querySelectorAll('.cta-button').forEach(button => {
         this.style.overflow = 'hidden';
         this.appendChild(ripple);
         
-        setTimeout(() => ripple.remove(), 600);
-    });
+   Carga imágenes solo cuando están a punto de entrar en el viewport.
+   Mejora el rendimiento inicial de la página.
+   Usa el atributo data-src en lugar de src en las imágenes.
+   Ejemplo: <img data-src="imagen.jpg" alt="...">
+   ============================================ */
+
+// Verifica si el navegador soporta IntersectionObserver    });
 });
 
 // Agregar keyframes para ripple
@@ -521,8 +576,12 @@ document.head.appendChild(rippleStyle);
    ============================================ */
 
 if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+   Crea un efecto 3D de inclinación al mover el mouse sobre las tarjetas.
+   Solo se activa en dispositivos con hover (escritorio).
+   Calcula la rotación basándose en la posición del cursor.
+   ============================================ */
+
+// Solo activar en dispositivos con hover (escritorio, no móvil)        entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 if (img.dataset.src) {
@@ -547,6 +606,13 @@ if ('IntersectionObserver' in window) {
    ============================================ */
 
 if (window.matchMedia('(hover: hover)').matches) {
+   Crea un efecto de máquina de escribir, mostrando texto letra por letra.
+   Parámetros:
+   - element: elemento donde mostrar el texto
+   - text: texto a escribir
+   - speed: velocidad en milisegundos entre letras (default: 50ms)
+   - callback: función a ejecutar cuando termine
+   Uso: typeWriter(elemento, "Hola mundo", 100, () => console.log("Terminó"));
     document.querySelectorAll('.servicio-card, .testimonio-card, .caso-card').forEach(card => {
         card.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
@@ -582,11 +648,15 @@ function typeWriter(element, text, speed = 50, callback) {
             i++;
             setTimeout(type, speed);
         } else if (callback) {
-            callback();
-        }
-    }
-    
-    type();
+            callDIRECCIÓN DEL SCROLL
+   Detecta si el usuario está haciendo scroll hacia arriba o abajo.
+   Guarda la dirección en un atributo data del body que puede
+   usarse para activar diferentes animaciones o comportamientos.
+   Accesible vía: document.body.getAttribute('data-scroll-direction')
+   ============================================ */
+
+let scrollDirection = 'up'; // Dirección inicial
+let prevScrollPos = window.pageYOffset; // Posición anterior
 }
 
 /* ============================================
@@ -601,6 +671,10 @@ function initCustomCursor() {
     
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
+   Muestra una pantalla de carga mientras el sitio se carga.
+   Incluye un logo animado, texto y barra de progreso.
+   Se oculta automáticamente cuando la página termina de cargar.
+   Para activarlo, descomenta: initPreloader(); al final del archivo.
         cursor.style.top = e.clientY + 'px';
     });
     
@@ -683,8 +757,16 @@ function initPreloader() {
         .preloader-progress {
             height: 100%;
             background: white;
-            animation: loading 1.5s ease-in-out infinite;
-        }
+   Este código se ejecuta cuando el DOM está completamente cargado.
+   Aquí se inicializan todas las funcionalidades principales:
+   - Animaciones al scroll
+   - Contadores animados
+   - Acordeones FAQ
+   - Etc.
+   Es el punto de entrada principal del JavaScript.
+   ============================================ */
+
+// Ejecutar cuando el DOM esté listo        }
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -700,10 +782,16 @@ function initPreloader() {
     document.body.prepend(preloader);
     
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            setTimeout(() => {
-                preloader.remove();
+        setTimeo (Preguntas Frecuentes)
+   Controla el comportamiento de expansión/colapso de las preguntas frecuentes:
+   - Al hacer clic en una pregunta, se expande/colapsa la respuesta
+   - Cierra automáticamente las otras preguntas abiertas (opcional)
+   - Añade una animación suave al expandir
+   Estructura HTML requerida: .faq-item > .faq-question + .faq-answer
+   ============================================ */
+
+function initFAQAccordion() {
+    // Selecciona todos los items FAQove();
                 style.remove();
             }, 500);
         }, 500);
@@ -752,9 +840,16 @@ function initFAQAccordion() {
         
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            
-            // Cerrar todos los otros FAQs (opcional - quitar si quieres múltiples abiertos)
-            faqItems.forEach(otherItem => {
+   Funciones auxiliares que ayudan a optimizar el rendimiento
+   y mejorar la experiencia del usuario.
+   ============================================ */
+
+/* DEBOUNCE
+   Limita la frecuencia de ejecución de una función.
+   Espera a que pasen 'wait' milisegundos sin llamadas antes de ejecutar.
+   Útil para eventos que se disparan mucho (resize, scroll, input).
+   Ejemplo: window.addEventListener('resize', debounce(miFuncion, 300));
+*/
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
                 }
@@ -764,7 +859,13 @@ function initFAQAccordion() {
             if (isActive) {
                 item.classList.remove('active');
             } else {
-                item.classList.add('active');
+ * THROTTLE
+   Limita la ejecución de una función a una vez cada 'limit' milisegundos.
+   A diferencia de debounce, ejecuta la función inmediatamente
+   y luego ignora llamadas durante el período de espera.
+   Útil para scroll events donde necesitas actualizaciones regulares.
+   Ejemplo: window.addEventListener('scroll', throttle(miFuncion, 100));
+*/
             }
             
             // Efecto de vibración suave al expandir

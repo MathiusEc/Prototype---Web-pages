@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres UTF-8 para soportar acentos y símbolos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en dispositivos móviles -->
     <title>DroneAgro - Servicios de Drones Agrícolas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula el archivo de estilos CSS -->
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- ==========================================
+         HEADER - Barra de navegación fija
+         Se mantiene visible en la parte superior mientras
+         el usuario hace scroll por la página
+         ========================================== -->
     <header>
         <nav>
+            <!-- Logo de la empresa -->
             <div class="logo"> 
                 <img src="https://www.shutterstock.com/image-vector/technology-icon-pack-featuring-drone-600nw-2571498399.jpg" alt="DroneAgro Logo">
             </div>
+            
+            <!-- Enlaces de navegación principales -->
             <ul class="nav_links">
-                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li> <!-- "active" marca la página actual -->
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="testimonios.html">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li> <!-- Enlace a sección en la misma página -->
             </ul>
+            
+            <!-- Botón hamburguesa para menú móvil (3 líneas) -->
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="hero">
+        <!-- Video de fondo en loop continuo -->
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-farm-field-4065-large.mp4" type="video/mp4">
         </video>
+        <!-- Overlay oscuro sobre el video para mejorar legibilidad del texto -->
         <div class="hero-overlay"></div>
         
+        <!-- Contenido principal del hero -->
         <div class="hero-content">
             <h1 class="fade-in-up">Servicios Profesionales de Drones Agrícolas</h1>
             <p class="fade-in-up delay-1">
                 Especialistas en 
+                <!-- Contenedor para texto rotativo/cambiante -->
                 <span class="rotating-text-container">
                     <span class="rotating-text">
                         <span>Fumigación</span>
@@ -49,9 +58,24 @@
                     </span>
                 </span>
             </p>
+            <!-- Botones de llamada a la acción (CTA) -->
             <div class="hero-buttons fade-in-up delay-2">
                 <a href="#contacto" class="cta-button primary">Solicitar Cotización</a>
                 <a href="servicios.html" class="cta-button secondary">Ver Servicios</a>
+            </div>
+        </div>
+        
+        <!-- Indicador de scroll (flecha hacia abajo) -->
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ESTADÍSTICAS - Números impactantes
+         Muestra métricas clave de la empresa con
+         animación de conteo automático
+         ==========================================ef="servicios.html" class="cta-button secondary">Ver Servicios</a>
             </div>
         </div>
         
@@ -91,7 +115,13 @@
         
         <div class="servicios-grid">
             <div class="servicio-card animate-on-scroll from-left">
-                <div class="servicio-icon">🌿</div>
+                <div class="servicio-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 7l-5-5-5 5M7 17l5 5 5-5"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M8 12c0 2-2 4-4 4M16 12c0 2 2 4 4 4"/>
+                    </svg>
+                </div>
                 <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?w=400&h=250&fit=crop" 
                      alt="Fumigación con drone">
                 <div class="servicio-content">
@@ -102,7 +132,12 @@
             </div>
 
             <div class="servicio-card animate-on-scroll from-bottom">
-                <div class="servicio-icon">🌾</div>
+                <div class="servicio-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6 2 6 6 6 12c0 4 2 8 6 10 4-2 6-6 6-10 0-6 0-10-6-10z"/>
+                        <path d="M12 2v20"/>
+                    </svg>
+                </div>
                 <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=250&fit=crop" 
                      alt="Fertilización">
                 <div class="servicio-content">
@@ -113,7 +148,12 @@
             </div>
 
             <div class="servicio-card animate-on-scroll from-right">
-                <div class="servicio-icon">🗺️</div>
+                <div class="servicio-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z"/>
+                        <path d="M9 3v15M15 6v15"/>
+                    </svg>
+                </div>
                 <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=250&fit=crop" 
                      alt="Mapeo">
                 <div class="servicio-content">
@@ -124,7 +164,13 @@
             </div>
 
             <div class="servicio-card animate-on-scroll from-left">
-                <div class="servicio-icon">🔍</div>
+                <div class="servicio-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                        <circle cx="11" cy="11" r="3"/>
+                    </svg>
+                </div>
                 <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=250&fit=crop" 
                      alt="Monitoreo">
                 <div class="servicio-content">
@@ -145,22 +191,41 @@
         <h2 class="animate-on-scroll">¿Por qué elegirnos? </h2>
         <div class="porque-grid">
             <div class="porque-item animate-on-scroll scale-in">
-                <div class="porque-icon">⚡</div>
+                <div class="porque-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                </div>
                 <h3>Rapidez</h3>
                 <p>Cubrimos grandes extensiones en tiempo récord</p>
             </div>
             <div class="porque-item animate-on-scroll scale-in">
-                <div class="porque-icon">🎯</div>
+                <div class="porque-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
                 <h3>Precisión</h3>
                 <p>Aplicación exacta donde se necesita</p>
             </div>
             <div class="porque-item animate-on-scroll scale-in">
-                <div class="porque-icon">💧</div>
+                <div class="porque-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                </div>
                 <h3>Ahorro</h3>
                 <p>Hasta 90% menos agua y químicos</p>
             </div>
             <div class="porque-item animate-on-scroll scale-in">
-                <div class="porque-icon">🌱</div>
+                <div class="porque-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                    </svg>
+                </div>
                 <h3>Ecológico</h3>
                 <p>Menor impacto ambiental</p>
             </div>
@@ -173,7 +238,7 @@
         
         <div class="testimonios-slider">
             <div class="testimonio-card animate-on-scroll from-left">
-                <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonio-stars">★★★★★</div>
                 <p class="testimonio-text">
                     "Redujimos costos un 40% y aumentamos rendimiento.  
                     El equipo de DroneAgro es muy profesional."
@@ -188,7 +253,7 @@
             </div>
 
             <div class="testimonio-card animate-on-scroll from-bottom">
-                <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonio-stars">★★★★★</div>
                 <p class="testimonio-text">
                     "La fumigación con drones nos permitió tratar zonas 
                     antes inaccesibles.  Excelente servicio."
@@ -203,7 +268,7 @@
             </div>
 
             <div class="testimonio-card animate-on-scroll from-right">
-                <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+                <div class="testimonio-stars">★★★★★</div>
                 <p class="testimonio-text">
                     "El mapeo multiespectral nos ayudó a detectar problemas 
                     antes de que fueran visibles. Increíble tecnología."
@@ -321,7 +386,9 @@
                 <p>Estamos listos para ayudarte a optimizar tu producción agrícola. </p>
                 
                 <div class="info-item">
-                    <span class="info-icon">📍</span>
+                    <span class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </span>
                     <div>
                         <strong>Oficina Principal</strong>
                         <p>Av. Agricultura 1234, Ciudad</p>
@@ -329,7 +396,9 @@
                 </div>
                 
                 <div class="info-item">
-                    <span class="info-icon">📞</span>
+                    <span class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </span>
                     <div>
                         <strong>Teléfono</strong>
                         <p>+1 234 567 890</p>
@@ -337,7 +406,9 @@
                 </div>
                 
                 <div class="info-item">
-                    <span class="info-icon">✉️</span>
+                    <span class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </span>
                     <div>
                         <strong>Email</strong>
                         <p>info@droneagro.com</p>
@@ -345,7 +416,9 @@
                 </div>
 
                 <div class="info-item">
-                    <span class="info-icon">🕐</span>
+                    <span class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    </span>
                     <div>
                         <strong>Horario</strong>
                         <p>Lunes a Viernes: 8:00 - 18:00</p>
@@ -353,10 +426,18 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="#" class="social-link" title="Facebook">📘</a>
-                    <a href="#" class="social-link" title="Instagram">📸</a>
-                    <a href="#" class="social-link" title="YouTube">▶️</a>
-                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
                 </div>
             </div>
 
@@ -387,14 +468,20 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ==========================================
+         FOOTER - Pie de página
+         Contiene información de contacto, enlaces rápidos
+         y redes sociales. Se divide en 4 columnas.
+         ========================================== -->
     <footer>
         <div class="footer-container">
+            <!-- Columna 1: Información de la empresa -->
             <div class="footer-col">
-                <h4>🚁 DroneAgro</h4>
+                <h4>DroneAgro</h4>
                 <p>Tecnología de precisión para la agricultura del futuro. </p>
             </div>
             
+            <!-- Columna 2: Enlaces de navegación -->
             <div class="footer-col">
                 <h4>Enlaces</h4>
                 <ul>
@@ -405,6 +492,7 @@
                 </ul>
             </div>
             
+            <!-- Columna 3: Servicios principales -->
             <div class="footer-col">
                 <h4>Servicios</h4>
                 <ul>
@@ -415,19 +503,22 @@
                 </ul>
             </div>
             
+            <!-- Columna 4: Información de contacto -->
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <p>📍 Av.  Agricultura 1234</p>
-                <p>📞 +1 234 567 890</p>
-                <p>✉️ info@droneagro.com</p>
+                <p>Av.  Agricultura 1234</p>
+                <p>+1 234 567 890</p>
+                <p>info@droneagro.com</p>
             </div>
         </div>
         
+        <!-- Barra inferior del footer con copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 DroneAgro. Todos los derechos reservados. </p>
         </div>
     </footer>
 
+    <!-- Vincula el archivo JavaScript con todas las animaciones e interacciones -->
     <script src="animations.js"></script>
 </body>
 </html>

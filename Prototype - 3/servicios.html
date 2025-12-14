@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica y responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - DroneAgro</title>
@@ -8,7 +9,9 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- ==========================================
+         HEADER - Navegación (igual en todas las páginas)
+         ========================================== -->
     <header>
         <nav>
             <div class="logo"> 
@@ -29,25 +32,49 @@
         </nav>
     </header>
 
-    <!-- PAGE HERO -->
+    <!-- ==========================================
+         PAGE HERO - Banner de página interna
+         Hero más simple para páginas secundarias (sin video)
+         ========================================== -->
     <section class="page-hero">
         <h1 class="fade-in-up">Nuestros Servicios</h1>
         <p class="fade-in-up delay-1">Soluciones tecnológicas para la agricultura moderna</p>
     </section>
 
-    <!-- SERVICIOS DETALLADOS -->
+    <!-- ==========================================
+         SERVICIOS DETALLADOS
+         Cada servicio se presenta en un layout alternado
+         (imagen izquierda/derecha) con:
+         - Icono SVG personalizado
+         - Descripción detallada
+         - Lista de beneficios
+         - Precio desde
+         - Botón de CTA
+         
+         La clase "reverse" invierte el orden imagen/contenido
+         ========================================== -->
     <section id="servicios-detalle">
         
-        <!-- SERVICIO 1:  FUMIGACIÓN -->
+        <!-- SERVICIO 1: FUMIGACIÓN -->
         <div class="servicio-detalle animate-on-scroll from-left">
+            <!-- Imagen con badge "Más Popular" -->
             <div class="servicio-detalle-img">
                 <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?w=600&h=400&fit=crop" 
                      alt="Fumigación Aérea">
                 <div class="servicio-badge">Más Popular</div>
             </div>
+            <!-- Contenido textual del servicio -->
             <div class="servicio-detalle-content">
+                <!-- Header con icono SVG y título -->
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">🌿</span>
+                    <span class="servicio-icon-large">
+                        <!-- SVG: Icono de spray/goteo -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 7l-5-5-5 5M7 17l5 5 5-5"/>
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M8 12c0 2-2 4-4 4M16 12c0 2 2 4 4 4"/>
+                        </svg>
+                    </span>
                     <h2>Fumigación Aérea</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -56,11 +83,11 @@
                     uniforme con mínimo desperdicio de producto.
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Cobertura de hasta 10 hectáreas por hora</li>
-                    <li>✅ Ahorro de hasta 40% en productos químicos</li>
-                    <li>✅ Acceso a zonas difíciles o inundadas</li>
-                    <li>✅ Sin compactación del suelo</li>
-                    <li>✅ Operación con GPS de alta precisión</li>
+                    <li>Cobertura de hasta 10 hectáreas por hora</li>
+                    <li>Ahorro de hasta 40% en productos químicos</li>
+                    <li>Acceso a zonas difíciles o inundadas</li>
+                    <li>Sin compactación del suelo</li>
+                    <li>Operación con GPS de alta precisión</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -79,7 +106,12 @@
             </div>
             <div class="servicio-detalle-content">
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">🌾</span>
+                    <span class="servicio-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6 2 6 6 6 12c0 4 2 8 6 10 4-2 6-6 6-10 0-6 0-10-6-10z"/>
+                            <path d="M12 2v20"/>
+                        </svg>
+                    </span>
                     <h2>Fertilización</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -88,11 +120,11 @@
                     del cultivo mediante mapas de prescripción.
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Aplicación de fertilizantes sólidos y líquidos</li>
-                    <li>✅ Distribución uniforme garantizada</li>
-                    <li>✅ Fertilización variable por zonas</li>
-                    <li>✅ Reducción de costos operativos</li>
-                    <li>✅ Mayor rendimiento por hectárea</li>
+                    <li>Aplicación de fertilizantes sólidos y líquidos</li>
+                    <li>Distribución uniforme garantizada</li>
+                    <li>Fertilización variable por zonas</li>
+                    <li>Reducción de costos operativos</li>
+                    <li>Mayor rendimiento por hectárea</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -112,7 +144,12 @@
             </div>
             <div class="servicio-detalle-content">
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">🗺️</span>
+                    <span class="servicio-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z"/>
+                            <path d="M9 3v15M15 6v15"/>
+                        </svg>
+                    </span>
                     <h2>Mapeo y Análisis</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -121,11 +158,11 @@
                     de que sean visibles al ojo humano. 
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Ortomosaicos de alta resolución</li>
-                    <li>✅ Índices vegetativos (NDVI, NDRE, etc.)</li>
-                    <li>✅ Modelos digitales de elevación</li>
-                    <li>✅ Mapas de prescripción variable</li>
-                    <li>✅ Informes detallados con recomendaciones</li>
+                    <li>Ortomosaicos de alta resolución</li>
+                    <li>Índices vegetativos (NDVI, NDRE, etc.)</li>
+                    <li>Modelos digitales de elevación</li>
+                    <li>Mapas de prescripción variable</li>
+                    <li>Informes detallados con recomendaciones</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -144,7 +181,13 @@
             </div>
             <div class="servicio-detalle-content">
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">🔍</span>
+                    <span class="servicio-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                            <circle cx="11" cy="11" r="3"/>
+                        </svg>
+                    </span>
                     <h2>Monitoreo de Cultivos</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -153,11 +196,11 @@
                     informado del estado de tus cultivos.
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Detección temprana de plagas</li>
-                    <li>✅ Identificación de estrés hídrico</li>
-                    <li>✅ Evaluación de daños por clima</li>
-                    <li>✅ Conteo de plantas y estimación de rendimiento</li>
-                    <li>✅ Alertas automáticas de problemas</li>
+                    <li>Detección temprana de plagas</li>
+                    <li>Identificación de estrés hídrico</li>
+                    <li>Evaluación de daños por clima</li>
+                    <li>Conteo de plantas y estimación de rendimiento</li>
+                    <li>Alertas automáticas de problemas</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -176,7 +219,13 @@
             </div>
             <div class="servicio-detalle-content">
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">🌱</span>
+                    <span class="servicio-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22v-8m0 0c-3-1-6-3-6-8 0-2 1-4 2-5 2 1 4 4 4 7V14z"/>
+                            <path d="M12 14c3-1 6-3 6-8 0-2-1-4-2-5-2 1-4 4-4 7"/>
+                            <line x1="12" y1="22" x2="12" y2="22"/>
+                        </svg>
+                    </span>
                     <h2>Siembra con Drones</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -185,11 +234,11 @@
                     extensiones que requieren cobertura rápida.
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Siembra de pastos y cultivos de cobertura</li>
-                    <li>✅ Reforestación de áreas degradadas</li>
-                    <li>✅ Alta velocidad de aplicación</li>
-                    <li>✅ Patrones de siembra optimizados</li>
-                    <li>✅ Compatible con semillas encapsuladas</li>
+                    <li>Siembra de pastos y cultivos de cobertura</li>
+                    <li>Reforestación de áreas degradadas</li>
+                    <li>Alta velocidad de aplicación</li>
+                    <li>Patrones de siembra optimizados</li>
+                    <li>Compatible con semillas encapsuladas</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -208,7 +257,13 @@
             </div>
             <div class="servicio-detalle-content">
                 <div class="servicio-header">
-                    <span class="servicio-icon-large">📚</span>
+                    <span class="servicio-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <path d="M8 7h8M8 11h8M8 15h5"/>
+                        </svg>
+                    </span>
                     <h2>Capacitación</h2>
                 </div>
                 <p class="servicio-descripcion">
@@ -217,11 +272,11 @@
                     de drones en tu operación agrícola.
                 </p>
                 <ul class="servicio-beneficios">
-                    <li>✅ Certificación como piloto de drones</li>
-                    <li>✅ Mantenimiento y reparación básica</li>
-                    <li>✅ Software de planificación de vuelos</li>
-                    <li>✅ Interpretación de datos y mapas</li>
-                    <li>✅ Normativa y seguridad aérea</li>
+                    <li>Certificación como piloto de drones</li>
+                    <li>Mantenimiento y reparación básica</li>
+                    <li>Software de planificación de vuelos</li>
+                    <li>Interpretación de datos y mapas</li>
+                    <li>Normativa y seguridad aérea</li>
                 </ul>
                 <div class="servicio-precio">
                     <span class="precio-desde">Desde</span>
@@ -229,7 +284,11 @@
                     <span class="precio-unidad">/ curso</span>
                 </div>
                 <a href="index.html#contacto" class="cta-button primary">Solicitar Información</a>
-            </div>
+         ==========================================
+         TABLA COMPARATIVA
+         Muestra ventajas de usar drones vs métodos tradicionales
+         La clase ".ventaja" resalta las celdas en verde
+         ==========================================
         </div>
     </section>
 
@@ -241,8 +300,8 @@
                 <thead>
                     <tr>
                         <th>Característica</th>
-                        <th>🚁 Con Drones</th>
-                        <th>🚜 Tradicional</th>
+                        <th>Con Drones</th>
+                        <th>Tradicional</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -273,16 +332,19 @@
                     </tr>
                     <tr>
                         <td>Operación nocturna</td>
-                        <td class="ventaja">Sí</td>
-                        <td>No</td>
-                    </tr>
-                </tbody>
-            </table>
+         ==========================================
+         CTA FINAL - Llamada a la acción
+         Sección final para convertir visitantes en clientes
+         ========================================== -->
+    <section id="cta-servicios">
+        <div class="cta-servicios-content animate-on-scroll">
+            <h2>¿Listo para modernizar tu operación agrícola?</h2>
+            <p>Contáctanos hoy y recibe una cotización personalizada sin compromiso</p>
+            <a href="index.html#contacto" class="cta-button primary large">Solicitar Cotización Gratuita</a>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section id="cta-servicios">
+    <!-- FOOTER (igual en todas las páginas)="cta-servicios">
         <div class="cta-servicios-content animate-on-scroll">
             <h2>¿Listo para modernizar tu operación agrícola?</h2>
             <p>Contáctanos hoy y recibe una cotización personalizada sin compromiso</p>
@@ -294,7 +356,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col">
-                <h4>🚁 DroneAgro</h4>
+                <h4>DroneAgro</h4>
                 <p>Tecnología de precisión para la agricultura del futuro. </p>
             </div>
             <div class="footer-col">
@@ -317,13 +379,13 @@
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <p>📍 Av.  Agricultura 1234</p>
-                <p>📞 +1 234 567 890</p>
-                <p>✉️ info@droneagro.com</p>
+                <p>Av. Agricultura 1234</p>
+                <p>+1 234 567 890</p>
+                <p>info@droneagro.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 DroneAgro.  Todos los derechos reservados.</p>
+            <p>&copy; 2025 DroneAgro. Todos los derechos reservados.</p>
         </div>
     </footer>
 
