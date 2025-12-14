@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada | DroneAgro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+        
+        .error-page h1 {
+            font-size: 8rem;
+            margin: 0;
+            color: #4CAF50;
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+        }
+        
+        .error-page h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .error-page p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .error-page .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .error-page .cta-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+        }
+        
+        .error-drone {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-drone">🚁</div>
+        <h1>404</h1>
+        <h2>¡Ups! Página no encontrada</h2>
+        <p>El dron no pudo localizar esta página. Es posible que haya sido movida o ya no exista.</p>
+        <a href="/" class="cta-button">Volver al Inicio</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Página principal - Mayor prioridad -->
+    <url>
+        <loc>https://www.droneagro.com/</loc>
+        <lastmod>2025-12-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Servicios - Alta prioridad -->
+    <url>
+        <loc>https://www.droneagro.com/servicios.html</loc>
+        <lastmod>2025-12-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Nosotros - Media prioridad -->
+    <url>
+        <loc>https://www.droneagro.com/nosotros.html</loc>
+        <lastmod>2025-12-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Testimonios - Media prioridad -->
+    <url>
+        <loc>https://www.droneagro.com/testimonios.html</loc>
+        <lastmod>2025-12-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
